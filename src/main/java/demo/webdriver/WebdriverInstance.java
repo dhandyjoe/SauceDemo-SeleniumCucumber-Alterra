@@ -15,7 +15,6 @@ public class WebdriverInstance {
     public static void initialize()  {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--incognito", "--start-maximized");
-        options.setCapability(CapabilityType.BROWSER_NAME, BrowserType.CHROME);
         webdriver = new ChromeDriver(options);
         webdriver.manage().window().maximize();
         webdriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
