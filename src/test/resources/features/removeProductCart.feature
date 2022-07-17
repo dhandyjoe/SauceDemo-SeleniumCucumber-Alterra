@@ -1,16 +1,18 @@
 @Web
 Feature: Add to cart
-  Background:
+  Background: Added product to cart
     Given User input "standard_user" and "secret_sauce"
     And User click button login
     Then User success login
-
-  @Login
-  Scenario Outline: Add to Cart
     When User click add to cart in a product
     And User click Cart icon
     And The page will be move to Cart page
-    Then User can see the "<value>" added in the cart
+
+
+  Scenario Outline: Add to Cart
+    Then User can see the "<product1>" added in the cart
+    When User click Remove Button
+    Then Product is removed
     Examples:
-    |value  |
-    | 4     |
+      |product1   |
+      |  4        |

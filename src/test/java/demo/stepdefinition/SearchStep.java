@@ -7,7 +7,6 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 
 public class SearchStep {
-
     SearchPages searchPages = new SearchPages();
 
     @When("User click Filter Button")

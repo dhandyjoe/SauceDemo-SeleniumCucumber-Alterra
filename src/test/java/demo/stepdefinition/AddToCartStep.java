@@ -1,33 +1,32 @@
 package demo.stepdefinition;
 
-import demo.pages.base.page_object.AddToCartPages;
+import demo.pages.base.page_object.CartPages;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
 public class AddToCartStep {
 
-    AddToCartPages addToCartPages = new AddToCartPages();
+    CartPages cartPages = new CartPages();
 
     @When("User click add to cart in a product")
     public void userClickAddToCart() {
-        addToCartPages.clickAddToCart();
+        cartPages.clickAddToCart();
     }
 
     @And("User click Cart icon")
     public void userClickIconCart() {
-        addToCartPages.clickAddToCart();
+        cartPages.clickIconCart();
     }
 
-    @And("And the page will be move to Cart page")
+    @And("The page will be move to Cart page")
     public void isSuccessMoveToCartPage() {
-        addToCartPages.clickAddToCart();
+        cartPages.isSuccessMoveToCartPage();
     }
 
-    @Then("User can see the product added in the cart")
-    public void isSuccessAddToCart() {
-        Assert.assertTrue(addToCartPages.isSuccessAddToCart());
+    @And("User can see the {string} added in the cart")
+    public void isSuccessAddToCart(String value) {
+        Assert.assertTrue(cartPages.isProductSuccesedAdded(value));
     }
+
 }
