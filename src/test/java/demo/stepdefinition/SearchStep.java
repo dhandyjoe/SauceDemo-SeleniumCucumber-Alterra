@@ -9,10 +9,10 @@ import org.openqa.selenium.By;
 public class SearchStep {
     SearchPages searchPages = new SearchPages();
 
-    @When("User click Filter Button")
-    public void clickFilterButton() {
-        searchPages.clickFilterButton();
-    }
+//    @When("User click Filter Button")
+//    public void clickFilterButton() {
+//        searchPages.clickFilterButton();
+//    }
 
     @And("User choose filter {string}")
     public void userChooseFilter(String value) {
@@ -20,7 +20,7 @@ public class SearchStep {
     }
 
     @Then("{string} in the first list products")
-    public void isMatching(String value) {
-        searchPages.matchedProduct(value);
+    public void isPresent(String value) {
+        searchPages.isPresentProduct(value);
     }
 }

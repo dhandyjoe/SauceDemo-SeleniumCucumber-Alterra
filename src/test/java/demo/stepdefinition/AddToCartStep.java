@@ -1,6 +1,8 @@
 package demo.stepdefinition;
 
+import demo.pages.base.BasePageObject;
 import demo.pages.base.page_object.CartPages;
+import demo.pages.base.page_object.InventoryPages;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -8,25 +10,26 @@ import org.junit.Assert;
 public class AddToCartStep {
 
     CartPages cartPages = new CartPages();
+    InventoryPages inventoryPages = new InventoryPages();
 
-    @When("User click add to cart in a product")
-    public void userClickAddToCart() {
-        cartPages.clickAddToCart();
+    @When("User click add to cart in a {string}")
+    public void userClickAddToCart(String value) {
+        inventoryPages.clickAddToCart(value);
     }
 
     @And("User click Cart icon")
     public void userClickIconCart() {
-        cartPages.clickIconCart();
+        inventoryPages.clickIconCart();
     }
 
     @And("The page will be move to Cart page")
-    public void isSuccessMoveToCartPage() {
+    public void isSuccessMoveToCartPage() throws InterruptedException {
         cartPages.isSuccessMoveToCartPage();
+        Thread.sleep(1000);
     }
 
     @And("User can see the {string} added in the cart")
     public void isSuccessAddToCart(String value) {
         Assert.assertTrue(cartPages.isProductSuccesedAdded(value));
     }
-
 }

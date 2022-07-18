@@ -4,15 +4,14 @@ Feature: Add to cart
     Given User input "standard_user" and "secret_sauce"
     And User click button login
     Then User success login
-    When User click add to cart in a product
+    When User click add to cart in a "add-to-cart-sauce-labs-backpack"
     And User click Cart icon
     And The page will be move to Cart page
+    Then User can see the "Sauce Labs Backpack" added in the cart
 
-
-  Scenario Outline: Add to Cart
-    Then User can see the "<product1>" added in the cart
-    When User click Remove Button
+  Scenario Outline: Remove from cart
+    When User click Remove Button from "<product>"
     Then Product is removed
     Examples:
-      |product1   |
-      |  4        |
+      |product                    |
+      |remove-sauce-labs-backpack |

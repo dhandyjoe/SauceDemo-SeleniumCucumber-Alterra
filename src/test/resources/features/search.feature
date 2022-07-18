@@ -6,12 +6,12 @@
       Then User success login
 
     Scenario Outline: Search with filter
-      When User click Filter Button
+#      When User click Filter Button
       And User choose filter "<option>"
-      Then "<value>" in the first list products
+      Then "<id>" in the first list products
       Examples:
-      | option  | value |
-      | 1       | 4     |
-      | 2       | 3     |
-      | 3       | 2     |
-      | 4       | 5     |
+      | option    | id |
+      | az        | 4  |
+      | za        | 3  |
+      | lohi      | 2  |
+      | hilo      | 5  |

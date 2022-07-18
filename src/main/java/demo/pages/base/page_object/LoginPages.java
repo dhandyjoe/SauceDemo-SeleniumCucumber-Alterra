@@ -23,9 +23,4 @@ public class LoginPages extends BasePageObject {
         By element = By.xpath("//span[contains(text(),'Products')]");
         return isPresent(element);
     }
-
-    public boolean isErrorMessage() {
-        By element = By.xpath("//*[@id=\"login_button_container\"]/div/form/div[3]");
-        return isPresent(element);
-    }
 }

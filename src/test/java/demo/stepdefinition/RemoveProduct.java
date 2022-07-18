@@ -9,13 +9,13 @@ public class RemoveProduct {
 
     CartPages cartPages = new CartPages();
 
-    @When("User click Remove Button")
-    public void userClickRemoveButton() {
-        cartPages.clickIconRemove();
+    @When("User click Remove Button from {string}")
+    public void userClickRemoveButton(String value) {
+        cartPages.clickIconRemove(value);
     }
 
     @Then("Product is removed")
     public void isProductIsRemoved() {
-        Assert.assertTrue(cartPages.isProductSuccesedRemoved());
+        Assert.assertFalse(cartPages.isProductSuccesedRemoved());
     }
 }

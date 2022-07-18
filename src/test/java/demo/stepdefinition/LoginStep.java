@@ -25,5 +25,4 @@ public class LoginStep {
     public void isSuccessLogin() {
         Assert.assertTrue(loginPages.isSuccessLogin());
     }
-
 }

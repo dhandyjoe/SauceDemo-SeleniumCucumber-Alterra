@@ -7,10 +7,11 @@ Feature: Add to cart
 
   @Login
   Scenario Outline: Add to Cart
-    When User click add to cart in a product
+    When User click add to cart in a "<products>"
     And User click Cart icon
     And The page will be move to Cart page
     Then User can see the "<value>" added in the cart
     Examples:
-    |value  |
-    | 4     |
+    | products                          | value                   |
+    | add-to-cart-sauce-labs-backpack   | Sauce Labs Backpack     |
+    | add-to-cart-sauce-labs-bike-light | Sauce Labs Bike Light   |
