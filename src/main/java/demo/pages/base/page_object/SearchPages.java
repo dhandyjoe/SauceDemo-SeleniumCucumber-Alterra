@@ -2,21 +2,19 @@ package demo.pages.base.page_object;
 
 import demo.pages.base.BasePageObject;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.Select;
 
 public class SearchPages extends BasePageObject {
 
-//    public void clickFilterButton() {
-//        By element = By.xpath("//*[@id=\"header_container\"]/div[2]/div[2]/span/select");
-//        clickOn(element);
-//        select("product_sort_container");
-//    }
-
-    public void chooseFilter(String value) {
-        selectByValue(value);
+    public Select getFilterProducts() {
+        return new Select(getDriver().findElement(By.className("product_sort_container")));
     }
 
-    public void isPresentProduct(String value) {
-        By element = By.xpath("//*[@id=\"item_"+value+"_title_link\"]/div");
-        isPresent(element);
+    public void chooseFilter(String value) {
+        getFilterProducts().selectByValue(value);
+    }
+
+    public String isPresentProductInTheFirstList(String value) {
+        return getTextProductInventory(value);
     }
 }

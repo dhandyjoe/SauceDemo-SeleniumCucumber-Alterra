@@ -8,10 +8,10 @@
     Scenario Outline: Search with filter
 #      When User click Filter Button
       And User choose filter "<option>"
-      Then "<id>" in the first list products
+      Then "<product>" in the first list products
       Examples:
-      | option    | id |
-      | az        | 4  |
-      | za        | 3  |
-      | lohi      | 2  |
-      | hilo      | 5  |
+      | option    | product                            |
+      | az        | Sauce Labs Backpack                |
+      | za        | Test.allTheThings() T-Shirt (Red)  |
+      | lohi      | Sauce Labs Onesie                  |
+      | hilo      | Sauce Labs Fleece Jacket           |

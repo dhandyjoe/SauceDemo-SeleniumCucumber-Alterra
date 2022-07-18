@@ -13,9 +13,6 @@ public class BasePageObject {
     public WebDriver getDriver() {
         return WebdriverInstance.webdriver;
     }
-    public Select getSelect() {
-        return new Select(getDriver().findElement(By.className("product_sort_container")));
-    }
 
     public void clickOn(By element) {
         getDriver().findElement(element).click();
@@ -29,16 +26,22 @@ public class BasePageObject {
         return getDriver().findElement(element).isDisplayed();
     }
 
-    public boolean isMatchedProductCart(String value) {
-        boolean statusElement = false;
-        List<WebElement> elements = getDriver().findElements(By.className("inventory_item_name"));
+    public String getTextProductCart(String value) {
+        List<WebElement> elements = getDriver().findElements(By.className("cart_item_label"));
         for (int i = 0; i < elements.size(); i++) {
-            if (elements.get(i).getText().equals(value)) {
-                statusElement = true;
-                break;
+            if (elements.get(i).findElement(By.className("inventory_item_name")).getText().equals(value)) {
+                return elements.get(i).findElement(By.className("inventory_item_name")).getText();
             }
         }
-        return statusElement;
+        return "";
+    }
+
+    public String getTextProductInventory(String value) {
+        List<WebElement> elements = getDriver().findElements(By.className("inventory_item"));
+        if (elements.get(0).findElement(By.className("inventory_item_name")).getText().equals(value)) {
+            return elements.get(0).findElement(By.className("inventory_item_name")).getText();
+        }
+        return "";
     }
 
     public void scrollDown() {
@@ -56,11 +59,4 @@ public class BasePageObject {
         return getDriver().getTitle();
     }
 
-//    public void select(String element) {
-//        getSelect(element);
-//    }
-
-    public void selectByValue(String value) {
-        getSelect().selectByValue(value);
-    }
 }

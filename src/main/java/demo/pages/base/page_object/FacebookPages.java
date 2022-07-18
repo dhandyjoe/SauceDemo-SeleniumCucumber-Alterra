@@ -3,7 +3,7 @@ package demo.pages.base.page_object;
 import demo.pages.base.BasePageObject;
 import org.openqa.selenium.By;
 
-public class TugasPages extends BasePageObject {
+public class FacebookPages extends BasePageObject {
 
     public void scrollToBottomPage() {
         scrollDown();

@@ -20,9 +20,9 @@ public class CartPages extends BasePageObject {
         clickOn(element);
     }
 
-    public boolean isProductSuccesedAdded(String value) {
+    public String getTextNameProductCart(String value) {
 //        By element = By.className("cart_item");
-        return isMatchedProductCart(value);
+        return getTextProductCart(value);
     }
 
     public boolean isProductSuccesedRemoved() {

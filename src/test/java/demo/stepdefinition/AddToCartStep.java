@@ -30,6 +30,6 @@ public class AddToCartStep {
 
     @And("User can see the {string} added in the cart")
     public void isSuccessAddToCart(String value) {
-        Assert.assertTrue(cartPages.isProductSuccesedAdded(value));
+        Assert.assertEquals(cartPages.getTextNameProductCart(value), value);
     }
 }

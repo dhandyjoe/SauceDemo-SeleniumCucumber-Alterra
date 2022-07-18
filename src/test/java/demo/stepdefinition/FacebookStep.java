@@ -1,15 +1,14 @@
 package demo.stepdefinition;
 
-import demo.pages.base.BasePageObject;
-import demo.pages.base.page_object.TugasPages;
+import demo.pages.base.page_object.FacebookPages;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
-public class TugasStep {
+public class FacebookStep {
 
-    TugasPages tugasPages = new TugasPages();
+    FacebookPages tugasPages = new FacebookPages();
 
     @When("User scroll to bottom page")
     public void userScrollPage() {
@@ -27,7 +26,6 @@ public class TugasStep {
 
     @Then("User can validate url title")
     public void isTitleFacebook() {
-        System.out.println("Title = " + tugasPages.getTitleFacebook());
         Assert.assertEquals(tugasPages.getTitleFacebook(), "Sauce Labs - Home | Facebook");
     }
 }
