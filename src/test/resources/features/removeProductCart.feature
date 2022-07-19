@@ -3,7 +3,7 @@ Feature: Add to cart
   Background: Added product to cart
     Given User input "standard_user" and "secret_sauce"
     And User click button login
-    Then User success login
+    Then Success move to Inventory page
     When User click add to cart in a "add-to-cart-sauce-labs-backpack"
     And User click Cart icon
     And The page will be move to Cart page

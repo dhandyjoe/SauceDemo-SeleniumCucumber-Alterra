@@ -21,7 +21,7 @@ public class LoginStep {
         loginPages.clickButtonLogin();
     }
 
-    @Then("User success login")
+    @Then("Success move to Inventory page")
     public void isSuccessLogin() {
         Assert.assertTrue(loginPages.isSuccessLogin());
     }

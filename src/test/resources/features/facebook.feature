@@ -4,7 +4,7 @@
     Background: Login
       Given User input "standard_user" and "secret_sauce"
       And User click button login
-      Then User success login
+      Then Success move to Inventory page
 
     @NavigateToFacebook
     Scenario: NavigateToFacebook

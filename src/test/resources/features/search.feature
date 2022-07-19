@@ -3,7 +3,7 @@
     Background:
       When User input "standard_user" and "secret_sauce"
       And User click button login
-      Then User success login
+      Then Success move to Inventory page
 
     Scenario Outline: Search with filter
 #      When User click Filter Button

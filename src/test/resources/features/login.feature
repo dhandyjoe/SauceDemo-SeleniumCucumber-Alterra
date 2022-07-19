@@ -3,7 +3,7 @@
     Scenario Outline: Login Success
       When User input "<username>" and "<password>"
       And User click button login
-      Then User success login
+      Then Success move to Inventory page
 
       Examples:
         | username        | password        |
