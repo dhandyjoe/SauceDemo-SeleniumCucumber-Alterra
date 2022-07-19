@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import static java.lang.Thread.sleep;
+
 public class BasePageObject {
 
     public WebDriver getDriver() {
@@ -24,6 +26,14 @@ public class BasePageObject {
 
     public boolean isPresent(By element) {
         return getDriver().findElement(element).isDisplayed();
+    }
+
+    public void wait(int wait) {
+        try {
+            sleep(wait);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public String getTextProductCart(String value) {
@@ -52,11 +62,10 @@ public class BasePageObject {
     public void moveToTab(int index) {
         ArrayList<String> tabs = new ArrayList(getDriver().getWindowHandles());
         getDriver().switchTo().window(tabs.get(index));
-        System.out.println(tabs);
     }
 
     public String getTitle() {
+        wait(2000);
         return getDriver().getTitle();
     }
-
 }

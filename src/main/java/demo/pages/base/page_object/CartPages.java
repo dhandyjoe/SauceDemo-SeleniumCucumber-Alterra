@@ -7,6 +7,7 @@ public class CartPages extends BasePageObject {
 
     public boolean isSuccessMoveToCartPage() {
         By element = By.xpath("//*[@id=\"header_container\"]/div[2]/span");
+        wait(1000);
         return isPresent(element);
     }
 

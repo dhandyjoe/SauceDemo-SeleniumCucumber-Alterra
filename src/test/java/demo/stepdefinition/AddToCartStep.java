@@ -25,7 +25,6 @@ public class AddToCartStep {
     @And("The page will be move to Cart page")
     public void isSuccessMoveToCartPage() throws InterruptedException {
         cartPages.isSuccessMoveToCartPage();
-        Thread.sleep(1000);
     }
 
     @And("User can see the {string} added in the cart")

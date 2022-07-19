@@ -12,8 +12,9 @@ public class FacebookStep {
 
     @When("User scroll to bottom page")
     public void userScrollPage() {
-
+        tugasPages.scrollToBottomPage();
     }
+
     @And("User click facebook")
     public void userClickFacebook() {
         tugasPages.clickButtonFacebook();
@@ -21,7 +22,7 @@ public class FacebookStep {
 
     @And("User move to tab")
     public void userMoveToTab() {
-        tugasPages.scrollToBottomPage();
+        tugasPages.moveToTab(1);
     }
 
     @Then("User can validate url title")
