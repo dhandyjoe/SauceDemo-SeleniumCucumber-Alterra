@@ -1,5 +1,5 @@
 @Web
-Feature: Add to cart
+Feature: Remove product functionality
   Background: Added product to cart
     Given User input "standard_user" and "secret_sauce"
     And User click button login

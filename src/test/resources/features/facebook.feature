@@ -1,5 +1,5 @@
 @Web
-  Feature: Scenario with Background
+  Feature: Facebook
 
     Background: Login
       Given User input "standard_user" and "secret_sauce"

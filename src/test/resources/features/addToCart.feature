@@ -1,5 +1,5 @@
 @Web
-Feature: Add to cart
+Feature: Add to cart functionality
   Background:
     Given User input "standard_user" and "secret_sauce"
     And User click button login
