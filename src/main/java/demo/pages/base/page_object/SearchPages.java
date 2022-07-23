@@ -6,10 +6,6 @@ import org.openqa.selenium.support.ui.Select;
 
 public class SearchPages extends BasePageObject {
 
-    public Select getFilterProducts() {
-        return new Select(getDriver().findElement(By.className("product_sort_container")));
-    }
-
     public void chooseFilter(String value) {
         getFilterProducts().selectByValue(value);
     }

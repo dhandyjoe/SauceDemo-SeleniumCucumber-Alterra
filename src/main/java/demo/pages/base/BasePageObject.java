@@ -68,4 +68,8 @@ public class BasePageObject {
         wait(2000);
         return getDriver().getTitle();
     }
+
+    public Select getFilterProducts() {
+        return new Select(getDriver().findElement(By.className("product_sort_container")));
+    }
 }
